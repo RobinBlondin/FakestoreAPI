@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .title-panel {
+        background-color: #3a5a40;
+        min-height: 15vh;
+    }
+
+    .button-panel {
+        background-color: #588157;
+        min-height: 5vh;
+    }
+
+    .west-panel,
+    .east-panel {
+        background-color: #588157;
+        min-height: 70vh;
+        height: auto;
+    }
+
+    .center-panel {
+        background-color: blanchedalmond;
+        min-height: 70vh;
+    }
+
+    .bottom-panel {
+        background-color: #344e41;
+        min-height: 10vh;
+    }
+
+    .filter-panel {
+        background-color: #a3b18a;
+        min-height: 5vh;
+    }
+
+    .product-panel {
+        flex-wrap: wrap;
+        background-color: #dad7cd;
+        min-height: 65vh;
+        padding: 2vw;
+    }
+    .container-fluid {
+        border-radius: 5px;
+    }
+
+    .nav-button {
+        border: 0;
+        background-color:#588157 ;
+        min-height: 5vh;
+        text-align: center;
+        color:#dad7cd;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 15vh;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10vw;
+    }
+
+    .filter-container {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        min-height: 5vh;
+        gap: 5vw;
+    }
+
+    .dropdown-button {
+        border: 0;
+        background-color: #a3b18a;
+        color:#3a5a40
+    }
+
+    .search-field {
+        border-radius: 5px;
+        border-color: #3a5a40;
+        border-width: 1px;
+        padding-left: 1vw;
+        color: #3a5a40;
+        max-width: 40vw;
+    }
+
+    .search-field:focus {
+        outline: none;
+    }
+
+    .box-product {
+        border-radius: 10px;
+        background-color: rgb(106, 106, 255, 0.5);
+        min-height: 40vh;
+        min-width: 18vw;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="title-panel">
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                                <div class="logo-container">
+                                    <img src="images/logo.png" class="logo" alt="">
+                                </div>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="button-panel">
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                                <div class="button-container">
+                                <button class="nav-button">Home</button>
+                                <button class="nav-button">About</button>
+                                <button class="nav-button">Products</button>
+                                <button class="nav-button">Contact</button>
+                            </div>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid d-flex">
+            <div class="row g-0 d-flex">
+                <div class="col-1 d-flex">
+                    <div class="west-panel flex-grow-1">
+
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="center-panel">
+                        <div class="row">
+                            <div class="col">
+                                <div class="filter-panel">
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="col-10">
+                                            <div class="filter-container">
+                                                <button class="dropdown-button">Categories</button>
+                                                <input class="search-field" type="search" placeholder="Search products...">
+                                            </div>
+                                        </div>
+                                        <div class="col-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="product-panel">
+                                    <div class="row gy-4" class="product-list">
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="box-product"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="box-product"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="box-product"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="box-product"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="box-product"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1 d-flex">
+                    <div class="east-panel flex-grow-1">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="bottom-panel">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
