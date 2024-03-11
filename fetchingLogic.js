@@ -15,7 +15,8 @@ export async function processProducts() {
     const inputList = await fetchProducts()
 
     inputList.forEach(product => {
-        createCard(product.image, product.title, product.price)
+        createCard(product.id, product.image, product.title, product.price)
+        console.log(product.id)
     })
 }
 
@@ -24,7 +25,7 @@ export async function filterProductByCategory(category) {
 
     productsList.forEach(product => {
         if (product.category.includes(category)) {
-            createCard(product.image, product.title, product.price)
+            createCard(product.id, product.image, product.title, product.price)
         }
     })
 }
@@ -34,7 +35,7 @@ export async function filterProductBySearch(word) {
 
     productsList.forEach(product => {
         if (product.category.includes(word) || product.title.includes(word) || product.description.includes(word)) {
-            createCard(product.image, product.title, product.price)
+            createCard(product.id, product.image, product.title, product.price)
         }
     })
 }
@@ -64,5 +65,5 @@ export async function fillCategoryMenu() {
 }
 
 fillCategoryMenu();
-
+ 
 
