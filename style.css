@@ -161,7 +161,7 @@ body {
     position: relative;
     display: inline-block;
     border: 0;
-    
+
 }
 
 .dropdown-content {
@@ -185,8 +185,8 @@ body {
 
 .list-item {
     border: 0;
-    background-color:#a3b18a;
-    color:#3a5a40;
+    background-color: #a3b18a;
+    color: #3a5a40;
     font-weight: bold;
     height: 40px;
     min-width: 160px;
@@ -195,4 +195,37 @@ body {
 
 .centerBox {
     min-width: 100%;
+}
+
+/* Shopping cart entry */
+.cart-entry {
+    border-top: rgb(47, 48, 46, 0.4);
+    min-height: 50px;
+}
+.number {
+    margin: 100px;
+}
+
+.minus,
+.plus {
+    width: 20px;
+    height: 20px;
+    background: #f2f2f2;
+    border-radius: 4px;
+    padding: 8px 5px 8px 5px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+input {
+    height: 34px;
+    width: 100px;
+    text-align: center;
+    font-size: 26px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
 }
