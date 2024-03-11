@@ -199,12 +199,11 @@ body {
 
 /* Shopping cart entry */
 .cart-entry {
-    border-top: rgb(47, 48, 46, 0.4);
+    border-top: rgba(0, 0, 0, 0.7);
+    border: solid;
     min-height: 50px;
 }
-.number {
-    margin: 100px;
-}
+
 
 .minus,
 .plus {
