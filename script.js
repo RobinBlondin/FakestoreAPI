@@ -35,6 +35,12 @@ document.addEventListener('click', function(e) {
         }
         })
         cart.style.display = 'block'
+    } else if (e.target && e.target.matches('span.minus')) {
+
+    } else if (e.target && e.target.matches('span.plus')) {
+        
     }
 })
+
+
 
