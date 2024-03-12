@@ -1,5 +1,5 @@
 export function createCard(id, imageSrc, title, price) {
-    fetch('./card.html')
+    fetch('../components/card.html')
         .then(res => res.text())
         .then(data => {
             const temp = document.createElement('div')
