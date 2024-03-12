@@ -63,7 +63,5 @@ export async function fillCategoryMenu() {
    })
     
 }
-
-fillCategoryMenu();
  
 
