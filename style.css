@@ -37,6 +37,11 @@ body {
     min-height: 70vh;
 }
 
+.center-panel-cart {
+    padding-top: 20px;
+    background-color:#dad7cd;
+}
+
 .bottom-panel {
     background-color: #344e41;
     min-height: 10vh;
@@ -199,16 +204,18 @@ body {
 
 /* Shopping cart entry */
 .cart-entry {
-    border-top: rgba(0, 0, 0, 0.7);
-    border: solid;
-    min-height: 50px;
+    background-color:#dad7cd;
+    
+    border-top-width: 2px;
+    border-top-color: rgba(0,0,0,0.2);
+    min-height: 100px;
 }
 
 
 .minus,
 .plus {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 37px;
     background: #f2f2f2;
     border-radius: 4px;
     padding: 8px 5px 8px 5px;
@@ -218,9 +225,9 @@ body {
     text-align: center;
 }
 
-input {
-    height: 34px;
-    width: 100px;
+.cart-input {
+    height: 37px;
+    width: 50px;
     text-align: center;
     font-size: 26px;
     border: 1px solid #ddd;
