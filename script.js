@@ -1,4 +1,4 @@
-import { processProducts, filterProductByCategory, filterProductBySearch, fetchProducts } from './fetchingLogic.js'
+import { processProducts, filterProductByCategory, filterProductBySearch, fetchProducts } from './utilities/fetchingLogic.js'
 
 const shoppingCart = new Map();
 const list = await fetchProducts();
