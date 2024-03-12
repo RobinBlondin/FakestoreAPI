@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid no-margin">
 
-        <div class="row">
+        <div class="row top-section">
             <div class="col">
                 <div class="title-panel">
                     <div class="row">
@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="col-2 d-flex align-items-center">
-                            <img src="./images/cart-icon.png" alt="">
+                            <img src="./images/cart-icon.png" class="img-fluid" alt="">
                             <div class="cart-count" id="cart-counts">0</div>
                         </div>
                     </div>
@@ -52,31 +52,18 @@
         </div>
 
 
-        <div class="row g-0 d-flex">
+        <div class="row g-0 d-flex center-section">
             <div class="col-1 d-flex">
                 <div class="west-panel flex-grow-1">
 
                 </div>
             </div>
-            <div class="col-10">
-                <div class="center-panel-cart">
+            <div class="col-10 center-panel-cart">
+                <div class="">
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="col-lg-6 col-md-8 col-sm-10 cart-panel">
-                            <div class="row cart-entry d-flex align-items-center justify-content-center text-center">
-                                <div class="col-2 cart-image">
-                                    <div class="box-image" style="background-color: aqua; min-height: 50px;"></div>
-                                </div>
-                                <div class="col-5 cart-title">Blue collar sweater</div>
-                                <div class="col-2 cart-price">$299</div>
-                                <div class="col-3 ">
-                                    <div class="number d-flex align-items-center">
-                                        <span class="minus">-</span>
-                                        <input type="text" class="cart-input" value="" readonly/>
-                                        <span class="plus">+</span>
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                         </div>
                         <div class="col-3"></div>
@@ -90,10 +77,14 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row bottom-section">
             <div class="col">
                 <div class="bottom-panel">
-
+                    <div class="row">
+                        <div class="col d-flex align-items-center justify-content-end">
+                            <button id="clear">Clear</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,7 +93,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="./script.js" type="module"></script>
+    <script src="./shoppingCartScript.js" type="module"></script>
 </body>
 
 </html>
