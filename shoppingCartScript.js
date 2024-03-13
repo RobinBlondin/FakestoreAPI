@@ -38,12 +38,12 @@ document.addEventListener('click', function (e) {
     }
 })
 
-document.getElementById('clear').addEventListener('click', function () {
+/* document.getElementById('clear').addEventListener('click', function () {
     localStorage.clear()
     shoppingCart.splice(0, shoppingCart.length)
     loadCartEntries()
     setCartCount(shoppingCart.length)
-});
+}); */
 
 function loadCartEntries() {
     productList.forEach(product => {
