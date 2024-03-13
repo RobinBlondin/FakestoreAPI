@@ -61,7 +61,6 @@ export async function fillCategoryMenu() {
     temp.textContent = category;
     document.querySelector('.dropdown-content').appendChild(temp)
    })
-    
 }
  
 
