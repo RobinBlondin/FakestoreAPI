@@ -59,46 +59,57 @@
                 </div>
             </div>
             <div class="col-10 center-panel-cart">
-                <div class="row checkout-panel h-100 g-4 d-flex flex-column flex-md-row">
-                    <div class="col d-flex flex-column align-items-center justify-content-start input-panel">
+                <div class="row checkout-panel d-flex flex-column flex-md-row">
+                    <div class="col d-flex flex-column align-items-center justify-content-start input-panel mb-3">
                         <form>
-                            <label for="" class="fw-bold">Please enter your details below</label>
+                            <p class="fw-bold">Please enter your details below</p>
                             <div class="name-container d-flex flex-column flex-md-row">
-                                <input type="text" class="checkout-input checkout-name mt-4"
-                                    placeholder="First name...">
-                                <input type="text" class="checkout-input checkout-name mt-4" placeholder="Last name...">
+                                <input type="text" name="firstN" class="checkout-input checkout-name mt-4" placeholder="First name..." autocomplete="additional-name">
+                                <input type="text" name="lastN" class="checkout-input checkout-name mt-4" placeholder="Last name..." autocomplete="additional-name">
                             </div>
 
                             <div class="address">
                                 <div class="address-line-1">
-                                    <input type="text" name="" class="mt-4 w-100" placeholder="Address line 1...">
+                                    <input type="text" name="address" class="mt-4 w-100" placeholder="Address line 1..." autocomplete="address-level1">
                                 </div>
                                 <div class="zip-city d-flex flex-column flex-md-row">
-                                    <input type="text" class="checkout-input checkout-name mt-4"
+                                    <input type="text" name="zip" class="checkout-input checkout-name mt-4"
                                         placeholder="Zip code...">
-                                    <input type="text" class="checkout-input checkout-name mt-4" placeholder="City...">
+                                    <input type="text" name="city" class="checkout-input checkout-name mt-4" placeholder="City..." autocomplete="postal-code">
                                 </div>
                                 <div class="phone mt-4">
-                                    <input type="tel" class="checkout-input checkout-name w-100"
-                                        placeholder="Phone number...">
+                                    <input type="tel" name="phone" class="checkout-input checkout-name w-100"
+                                        placeholder="Phone number..." autocomplete="tel">
                                 </div>
                                 <div class="email mt-4">
-                                    <input type="email" class="checkout-input checkout-name w-100"
+                                    <input type="email" name="mail" class="checkout-input checkout-name w-100"
                                         placeholder="Email address...">
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="col d-flex flex-column align-items-center justify-content-center">
-                        <div class="checkout-list-container">
-                            <ul id="checkout-list">
-                                <li>green sweater x1 $100</li>
-                                <li>blue sweater x2 $200</li>
-                            </ul>
+                    <div class="col d-flex flex-column align-items-start ps-5 justify-content-start">
+                        <div class="checkout-list w-100" id="check-list">
+                            <div class="row w-100 mb-4 checkout-row">
+                                <div class="col-4">
+                                    Product descr.
+                                </div>
+                                <div class="col-2">
+                                    Qty
+                                </div>
+                                <div class="col-3 ">
+                                    Unit price
+                                </div>
+                                <div class="col-3">
+                                    Total price
+                                </div>
+                            </div>
                         </div>
-                        <div class="submit-container ">
-                            <h2 class="total-price"></h2>
-                            <button class="submit-button">Sumbit Order</button>
+                        <div class="total-container w-100 mt-5 d-flex flex-column align-items-end justify-content-end">
+                            <h4 class="total-price"></h4>
+                        </div>
+                        <div class="submit-container w-100 mt-3 d-flex align-items-center justify-content-center mb-3">
+                            <button class="submit-button">Submit Order</button>
                         </div>
                     </div>
                 </div>
@@ -113,7 +124,7 @@
         <div class="row bottom-section">
             <div class="col">
                 <div class="bottom-panel">
-                    
+
                 </div>
             </div>
         </div>
@@ -122,7 +133,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="./shoppingCartScript.js" type="module"></script>
+    <script src="./checkoutScript.js" type="module"></script>
 </body>
 
 </html>
