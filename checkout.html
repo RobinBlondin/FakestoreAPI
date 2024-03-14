@@ -11,6 +11,40 @@
 </head>
 
 <body>
+    <div class="order-conf" id="order-confi">
+        <div class="container-fluid">
+            <div class="row w-100">
+                <div class="col conf-content">
+
+                </div>
+            </div>
+            <div class="row w-100 mt-5 mb-2">
+                <div class="col ms-3"><h4>ORDERED PRODUCTS</h4></div>
+            </div>
+            <div class="row w-100 d-flex align-items-center justify-content-center conf-products" id="conf">
+                 
+                <div class="col-4 fw-bold">
+                    Product descr.
+                </div>
+                <div class="col-2 fw-bold">
+                    Qty
+                </div>
+                <div class="col-3 fw-bold">
+                    Unit price
+                </div>
+                <div class="col-3 fw-bold">
+                    Total price
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex align-items-center justify-content-center mt-5 mb-5">
+                    <button onclick="location.href='./products.html'" class="close-button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container-fluid no-margin">
 
         <div class="row top-section">
@@ -61,36 +95,45 @@
             <div class="col-10 center-panel-cart">
                 <div class="row checkout-panel d-flex flex-column flex-md-row">
                     <div class="col d-flex flex-column align-items-center justify-content-start input-panel mb-3">
-                        <form>
+                        <form class=".form" novalidate>
                             <p class="fw-bold">Please enter your details below</p>
                             <div class="name-container d-flex flex-column flex-md-row">
-                                <input type="text" name="firstN" class="checkout-input checkout-name mt-4" placeholder="First name..." autocomplete="additional-name">
-                                <input type="text" name="lastN" class="checkout-input checkout-name mt-4" placeholder="Last name..." autocomplete="additional-name">
+                                <input type="text" name="firstName" pattern="[A-Za-z]+" minlength="2" maxlength="50"
+                                    class="checkout-input checkout-name mt-4" placeholder="First name..."
+                                    autocomplete="additional-name" required>
+                                <input type="text" name="lastName" pattern="[A-Za-z]+" minlength="2" maxlength="50"
+                                    class="checkout-input checkout-name mt-4" placeholder="Last name..."
+                                    autocomplete="additional-name" required>
                             </div>
 
                             <div class="address">
                                 <div class="address-line-1">
-                                    <input type="text" name="address" class="mt-4 w-100" placeholder="Address line 1..." autocomplete="address-level1">
+                                    <input type="text" name="address" minlength="2" maxlength="50" class="mt-4 w-100"
+                                        placeholder="Address line 1..." autocomplete="address-level1" required>
                                 </div>
                                 <div class="zip-city d-flex flex-column flex-md-row">
-                                    <input type="text" name="zip" class="checkout-input checkout-name mt-4"
-                                        placeholder="Zip code...">
-                                    <input type="text" name="city" class="checkout-input checkout-name mt-4" placeholder="City..." autocomplete="postal-code">
+                                    <input type="text" name="zip" pattern="\d{5}"
+                                        class="checkout-input checkout-name mt-4" placeholder="Zip code..." required>
+                                    <input type="text" name="city" pattern="[A-Za-z]+" minlength="2" maxlength="50"
+                                        class="checkout-input checkout-name mt-4" placeholder="City..."
+                                        autocomplete="postal-code" required>
                                 </div>
                                 <div class="phone mt-4">
-                                    <input type="tel" name="phone" class="checkout-input checkout-name w-100"
-                                        placeholder="Phone number..." autocomplete="tel">
+                                    <input type="tel" pattern="[\d\(\)\-]+" maxLength="50" name="phone"
+                                        class="checkout-input checkout-name w-100" placeholder="Phone number..."
+                                        autocomplete="tel" required>
                                 </div>
                                 <div class="email mt-4">
-                                    <input type="email" name="mail" class="checkout-input checkout-name w-100"
-                                        placeholder="Email address...">
+                                    <input type="email" name="email" maxLength="50"
+                                        class="checkout-input checkout-name w-100" placeholder="Email address..."
+                                        required>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="col d-flex flex-column align-items-start ps-5 justify-content-start">
                         <div class="checkout-list w-100" id="check-list">
-                            <div class="row w-100 mb-4 checkout-row">
+                            <div class="row w-100 mb-4 checkout-row" id="checkout-products">
                                 <div class="col-4">
                                     Product descr.
                                 </div>
