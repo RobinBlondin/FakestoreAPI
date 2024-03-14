@@ -49,7 +49,7 @@ function loadCartEntries() {
     productList.forEach(product => {
         const productId = product.id.toString()
         if(shoppingCart.includes(productId)) {
-            const amount = shoppingCart.filter(num => num === productId).reduce((total, num) => total + num).length
+            const amount = shoppingCart.filter(num => num === productId).length
             createCartEntry(product.id, product.image, product.title, product.price, amount)
         }
     })
