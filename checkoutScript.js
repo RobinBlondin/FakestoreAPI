@@ -22,14 +22,14 @@ function writeProducts(className) {
     shoppingCartItems.forEach((value, key) => {
         console.log(typeof value)
         const entry = document.createElement('div')
-        entry.className = 'row mt-3'
+        entry.className = 'row mt-3 d-flext fw-bold text-success align-items-end justify-content-center checkout-entry'
         entry.innerHTML = `<div class="col-4 checkout-title">
                             ${key.title}
                         </div>
                         <div class="col-2">
                             ${value}
                         </div>
-                        <div class="col-3 ">
+                        <div class="col-3">
                             $${key.price}
                         </div>
                         <div class="col-3">
@@ -63,11 +63,8 @@ document.querySelector('.submit-button').addEventListener('click', e => {
         }
 
         switch (firstInvalidInput.name) {
-            case 'name':
+            case 'firstName' || 'lastName' || 'city':
                 firstInvalidInput.setCustomValidity('Can only contain letters. Must be between 2-50 characters');
-                break;
-            case 'city':
-                firstInvalidInput.setCustomValidity('Can only contain letters. Must be between 2-50 characters')
                 break;
             case 'address':
                 firstInvalidInput.setCustomValidity('Can only contain letters and digits. Must be between 2-50 characters')
