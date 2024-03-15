@@ -1,12 +1,14 @@
 import { fetchProducts } from './utilities/fetchingLogic.js'
 import { createOrderConfirmation } from './utilities/createOrderConf.js'
+import { countTotalPrice } from './utilities/countTotalPrice.js'
 
-const keyList = await fetchProducts()
+const productList = await fetchProducts()
 const shoppingCart = JSON.parse(localStorage.getItem('cart') || '[]')
 const shoppingCartItems = new Map()
+const totalPrice = countTotalPrice(shoppingCart, productList)
 const inputInfo = new Map()
 
-keyList.forEach(key => {
+productList.forEach(key => {
     shoppingCart.forEach(cartId => {
         if (key.id.toString() === cartId) {
             if (shoppingCartItems.get(key) != null) {
@@ -18,34 +20,11 @@ keyList.forEach(key => {
     })
 })
 
-function writeProducts(className) {
-    shoppingCartItems.forEach((value, key) => {
-        console.log(typeof value)
-        const entry = document.createElement('div')
-        entry.className = 'row mt-3 d-flext fw-bold text-success align-items-end justify-content-center checkout-entry'
-        entry.innerHTML = `<div class="col-4 checkout-title">
-                            ${key.title}
-                        </div>
-                        <div class="col-2">
-                            ${value}
-                        </div>
-                        <div class="col-3">
-                            $${key.price}
-                        </div>
-                        <div class="col-3">
-                            $${key.price * value}
-                        </div>`;
-
-
-        document.querySelector(className).appendChild(entry)
-    })
-}
-
 writeProducts('.checkout-list');
 
 let total = document.querySelector('.total-price')
 if (shoppingCartItems.size != 0)
-    total.textContent = `Total Cost: $${shoppingCartItems.keys().map(key => key.price).reduce((total, num) => total + num)}`
+    total.textContent = `Total Cost: $${totalPrice}`
 
 
 document.querySelector('.submit-button').addEventListener('click', e => {
@@ -99,7 +78,28 @@ document.querySelector('.submit-button').addEventListener('click', e => {
         writeProducts('.conf-products');
 
         localStorage.clear();
-        form.clear();
-
+        form.reset()
     }
 })
+
+function writeProducts(className) {
+    shoppingCartItems.forEach((value, key) => {
+        const entry = document.createElement('div')
+        entry.className = 'row mt-3 d-flext fw-bold text-muted align-items-end justify-content-center checkout-entry'
+        entry.innerHTML = `<div class="col-4 checkout-title">
+                            ${key.title}
+                        </div>
+                        <div class="col-2">
+                            ${value}
+                        </div>
+                        <div class="col-3 text-start">
+                            $${key.price}
+                        </div>
+                        <div class="col-3 text-center text-success">
+                            $${key.price * value}
+                        </div>`;
+
+
+        document.querySelector(className).appendChild(entry)
+    })
+}
