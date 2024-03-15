@@ -29,6 +29,12 @@ body {
             min-height: 15vh;
         }
 
+        .cart-button:hover {
+            width: 47px;
+            height: 47px;
+            cursor: pointer;
+        }
+
         .cart-count {
             display: none;
             margin-left: -15px;
@@ -330,7 +336,7 @@ body {
     }
 
     .checkout-row {
-        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 3px solid rgba(0, 0, 0);
         min-height: 40px;
         font-size: large;
         font-weight: bold;
@@ -338,7 +344,7 @@ body {
 
     .total-container {
         padding-top: 10px;
-        border-top: 2px solid rgba(0, 0, 0, 0.2);
+        border-top: 3px solid rgba(0, 0, 0);
     }
 
     
@@ -369,11 +375,22 @@ body {
     width: 50%;
     height: 75%;
     border-radius: 10px;
-    background-color: #cecece;
+    background-color:white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s ease-in-out;
     z-index: 10000;
-    overflow-y: scroll;
+    overflow-y:auto;
+    padding: 50px;
+}
+
+.order-conf::-webkit-scrollbar-track {
+    background: transparent; /* making the track invisible */
+}
+
+.checkout-entry {
+    padding-bottom: 10px;
+    border-bottom: 2px dotted rgba(0,0,0,0.2);
+    margin-right: 12px;
 }
 
 @media (max-width: 1197px) {
@@ -382,14 +399,28 @@ body {
       align-items: start;
     }
 
+    .conf-products {
+        margin-left: 0;
+    }
+  }
+
+  @media (max-width: 950px) {
     .order-conf {
         left:0;
         top: 0;
         width: 100%;
         height: 100%;
     }
+  }
 
-    .conf-products {
-        margin-left: 0;
-    }
+  .banner {
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+  }
+
+  .banner-container {
+    min-height: 50%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
   }
