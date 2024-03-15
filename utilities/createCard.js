@@ -8,6 +8,7 @@ export function createCard(id, imageSrc, title, price) {
             const card = temp.firstElementChild;
 
             card.querySelector('.add-to-cart-button').setAttribute('button-id', id)
+            card.querySelector('.more-info-button').setAttribute('button-id', id)
             card.querySelector('.product-image').src = imageSrc
             card.querySelector('.product-title').textContent = title
             card.querySelector('.product-price').textContent = `$${price}`
