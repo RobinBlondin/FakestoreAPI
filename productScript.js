@@ -2,11 +2,10 @@ import { processProducts, filterProductByCategory, filterProductBySearch, fetchP
 import { setCartCount, incrementCartCount, decrementCartCount } from './utilities/cartCounterLogic.js';
 
 const list = await fetchProducts();
+const shoppingCart = JSON.parse(localStorage.getItem('cart') || '[]')
+
 processProducts(list);
 fillCategoryMenu()
-
-const shoppingCart = JSON.parse(localStorage.getItem('cart') || '[]')
-console.log(shoppingCart.length)
 setCartCount(shoppingCart.length)
 
 document.getElementById('search').addEventListener("search", () => {
