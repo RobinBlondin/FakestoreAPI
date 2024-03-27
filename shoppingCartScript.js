@@ -1,5 +1,5 @@
-import { incrementCartCount, decrementCartCount, setCartCount } from './utilities/cartCounterLogic.js'
-import { processProducts, filterProductByCategory, filterProductBySearch, fetchProducts } from './utilities/fetchingLogic.js'
+import { setCartCount } from './utilities/cartCounterLogic.js'
+import { fetchProducts } from './utilities/fetchingLogic.js'
 import { createCartEntry } from './utilities/createCartEntry.js'
 import { countTotalPrice } from './utilities/countTotalPrice.js'
 

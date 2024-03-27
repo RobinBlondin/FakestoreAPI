@@ -1,5 +1,5 @@
-import { processProducts, filterProductByCategory, filterProductBySearch, fetchProducts, fillCategoryMenu } from './utilities/fetchingLogic.js'
-import { setCartCount, incrementCartCount, decrementCartCount } from './utilities/cartCounterLogic.js';
+import { processProducts, filterProductBySearch, fetchProducts, fillCategoryMenu } from './utilities/fetchingLogic.js'
+import { setCartCount, incrementCartCount } from './utilities/cartCounterLogic.js';
 
 const list = await fetchProducts();
 const shoppingCart = JSON.parse(localStorage.getItem('cart') || '[]')
