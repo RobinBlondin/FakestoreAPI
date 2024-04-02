@@ -19,10 +19,12 @@
                 </div>
             </div>
             <div class="row w-100 mt-5 mb-2">
-                <div class="col ms-3"><h4>ORDERED PRODUCTS</h4></div>
+                <div class="col ms-3">
+                    <h4>ORDERED PRODUCTS</h4>
+                </div>
             </div>
             <div class="row w-100 d-flex align-items-center justify-content-center conf-products" id="conf">
-                 
+
                 <div class="col-4 fw-bold">
                     Product descr.
                 </div>
@@ -98,77 +100,34 @@
                         <form class=".form" novalidate>
                             <p class="fw-bold">Please enter your details below</p>
                             <div class="name-container d-flex flex-column flex-md-row">
-                                <input 
-                                    type="text" 
-                                    name="firstName" 
-                                    pattern="[A-Öa-ö ]+" 
-                                    minlength="2" 
-                                    maxlength="50"
-                                    class="checkout-input checkout-name mt-4" 
-                                    placeholder="First name..."
-                                    autocomplete="additional-name" 
-                                    required>
-                                <input 
-                                    type="text" 
-                                    name="lastName" 
-                                    pattern="[A-Öa-ö ]+" 
-                                    minlength="2" 
-                                    maxlength="50"
-                                    class="checkout-input checkout-name mt-4" 
-                                    placeholder="Last name..."
-                                    autocomplete="additional-name" 
-                                    required>
+                                <input type="text" name="firstName" pattern="[A-Öa-ö ]+" minlength="2" maxlength="50"
+                                    class="checkout-input checkout-name mt-4" placeholder="First name..."
+                                    autocomplete="additional-name" required>
+                                <input type="text" name="lastName" pattern="[A-Öa-ö ]+" minlength="2" maxlength="50"
+                                    class="checkout-input checkout-name mt-4" placeholder="Last name..."
+                                    autocomplete="additional-name" required>
                             </div>
 
                             <div class="address">
                                 <div class="address-line-1">
-                                    <input 
-                                        type="text" 
-                                        name="address" 
-                                        minlength="2" 
-                                        maxlength="50" 
-                                        class="mt-4 w-100"
-                                        placeholder="Address line 1..." 
-                                        autocomplete="address-level1" 
-                                        required>
+                                    <input type="text" name="address" minlength="2" maxlength="50" class="mt-4 w-100"
+                                        placeholder="Address line 1..." autocomplete="address-level1" required>
                                 </div>
                                 <div class="zip-city d-flex flex-column flex-md-row">
-                                    <input 
-                                        type="text" 
-                                        name="zip" 
-                                        pattern="\d{5}"
-                                        class="checkout-input checkout-name mt-4" 
-                                        placeholder="Zip code..." 
-                                        required>
-                                    <input 
-                                        type="text" 
-                                        name="city" 
-                                        pattern="[A-Öa-ö ]+" 
-                                        minlength="2" 
-                                        maxlength="50"
-                                        class="checkout-input checkout-name mt-4" 
-                                        placeholder="City..."
-                                        autocomplete="postal-code" 
-                                        required>
+                                    <input type="text" name="zip" pattern="\d{5}"
+                                        class="checkout-input checkout-name mt-4" placeholder="Zip code..." required>
+                                    <input type="text" name="city" pattern="[A-Öa-ö ]+" minlength="2" maxlength="50"
+                                        class="checkout-input checkout-name mt-4" placeholder="City..."
+                                        autocomplete="postal-code" required>
                                 </div>
                                 <div class="phone mt-4">
-                                    <input 
-                                        type="tel" 
-                                        pattern="[\d\(\)\-]+" 
-                                        maxLength="50" 
-                                        name="phone"
-                                        class="checkout-input checkout-name w-100" 
-                                        placeholder="Phone number..."
-                                        autocomplete="tel" 
-                                        required>
+                                    <input type="tel" pattern="[\d\(\)\-]+" maxLength="50" name="phone"
+                                        class="checkout-input checkout-name w-100" placeholder="Phone number..."
+                                        autocomplete="tel" required>
                                 </div>
                                 <div class="email mt-4">
-                                    <input 
-                                        type="email" 
-                                        name="email" 
-                                        maxLength="50"
-                                        class="checkout-input checkout-name w-100" 
-                                        placeholder="Email address..."
+                                    <input type="email" name="email" maxLength="50"
+                                        class="checkout-input checkout-name w-100" placeholder="Email address..."
                                         required>
                                 </div>
                             </div>
@@ -191,7 +150,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="total-container w-100 mt-5 d-flex flex-column align-items-center justify-content-center">
+                        <div
+                            class="total-container w-100 mt-5 d-flex flex-column align-items-center justify-content-center">
                             <h4 class="total-price fw-bolder"></h4>
                         </div>
                         <div class="submit-container w-100 mt-3 d-flex align-items-center justify-content-center mb-3">

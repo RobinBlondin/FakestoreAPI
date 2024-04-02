@@ -8,7 +8,7 @@ const productList = await fetchProducts()
 const shoppingCart = JSON.parse(localStorage.getItem('cart') || '[]')
 let totalElement = document.querySelector('.cart-total-price')
 
-setTotalCost();
+loadTotalPrice();
 
 setCartCount(shoppingCart.length)
 loadCartEntries()
@@ -16,7 +16,6 @@ loadCartEntries()
 
 
 document.addEventListener('click', function (e) {
-
     if (e.target && e.target.matches('span.minus')) {
         const id = e.target.getAttribute('minus-id');
         const cartPanel = document.querySelector('.cart-panel');
@@ -24,7 +23,7 @@ document.addEventListener('click', function (e) {
         shoppingCart.splice(shoppingCart.indexOf(id), 1);
         cartPanel.innerHTML = '';
 
-        setTotalCost();
+        loadTotalPrice();
 
         loadCartEntries();
         setCartCount(shoppingCart.length);
@@ -38,7 +37,7 @@ document.addEventListener('click', function (e) {
         shoppingCart.push(id)
         cartPanel.innerHTML = '';
 
-        setTotalCost();
+        loadTotalPrice();
 
         loadCartEntries();
         setCartCount(shoppingCart.length)
@@ -57,7 +56,7 @@ function loadCartEntries() {
     })
 }
 
-function setTotalCost() {
+function loadTotalPrice() {
     if(shoppingCart.length > 0)
         totalElement.textContent = `Total price: $${countTotalPrice(shoppingCart, productList)}`
     else 
