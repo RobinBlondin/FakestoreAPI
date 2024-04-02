@@ -202,6 +202,28 @@ body {
     border-top-right-radius: 10px;
 }
 
+.x-icon {
+    margin-top: 10px;
+    margin-left: 10%;
+    height: 18px;
+    width: 24px;
+}
+
+/* .trash-icon {
+    margin-left: 20px;
+} */
+
+.trash-icon:hover {
+    cursor: pointer;
+    margin-left: 18px;
+    height: 50px;
+    width: 50px;
+}
+
+.x-icon:hover {
+    cursor: pointer;
+}
+
 
 /* CARD STYLES */
 
@@ -279,6 +301,10 @@ body {
 
 /* Shopping cart entry */
 
+.cart-panel {
+    padding-left: 10%;
+    padding-right: 10%;
+}
 .cart-entry {
     background-color:#dad7cd;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
@@ -448,14 +474,11 @@ body {
         height: 100%;
     }
 
-    .checkout-button, .submit-button {
-        font-size: small;
-    }
-
-
+   
   }
 
   @media (max-width: 950px) {
+
     .order-conf {
         left:0;
         top: 0;
@@ -474,4 +497,15 @@ body {
         padding-left: 14px;
         padding-right: 14px;
     }
+  }
+
+  @media (max-width: 576px) {
+    .x-icon {
+        margin-top: 45px;
+    }
+
+    .checkout-button, .submit-button {
+        font-size: small;
+    }
+   
   }

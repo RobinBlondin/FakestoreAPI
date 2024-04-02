@@ -43,6 +43,15 @@ document.addEventListener('click', function (e) {
         setCartCount(shoppingCart.length)
 
         localStorage.setItem('cart', JSON.stringify(shoppingCart))
+    } else if (e.target && e.target.matches('.trash-icon')) {
+        localStorage.clear();
+        const cartPanel = document.querySelector('.cart-panel');
+        shoppingCart.splice(0, shoppingCart.length)
+        cartPanel.innerHTML = ''
+
+        loadTotalPrice();
+        loadCartEntries()
+        setCartCount(shoppingCart.length)
     }
 })
 
