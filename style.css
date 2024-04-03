@@ -580,7 +580,7 @@ body {
 
     .cart-count {
         margin-top: 30px;
-        
+
     }
    
   }
@@ -629,6 +629,10 @@ body {
 
     .details {
         gap: 20%;
+    }
+
+    .search-field {
+        margin-left: -1px;
     }
 
    
