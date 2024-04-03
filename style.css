@@ -222,9 +222,6 @@ body {
 
 .trash-icon:hover {
     cursor: pointer;
-    margin-left: 18px;
-    height: 50px;
-    width: 50px;
 }
 
 .x-icon:hover {
@@ -506,11 +503,17 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
+        border-radius: 0;
     }
 
     .more-info-button {
         padding-left: 14px;
         padding-right: 14px;
+    }
+
+    .trash-icon {
+        width: 36px;
+        height: 36px;
     }
   }
 
@@ -534,6 +537,8 @@ body {
         font-size: smaller;
     }
 
+    
+
   }
 
   @media (max-width: 576px) {
@@ -555,12 +560,27 @@ body {
         font-size: smaller;
     }
 
-    .trash-icon {
-        margin-left:0;
-    }
-
     .cart-title, .cart-price {
         font-size: small;
+    }
+
+    .mi-addtocart, .mi-close {
+        font-size: smaller;
+    }
+
+    .trash-icon {
+        margin-left:0;
+        width: 24px;
+        height: 24px;
+    }
+
+    .conf-text {
+        margin: 0;
+    }
+
+    .cart-count {
+        margin-top: 30px;
+        
     }
    
   }
@@ -607,5 +627,9 @@ body {
         font-size: medium;
     }
 
-    
+    .details {
+        gap: 20%;
+    }
+
+   
   }

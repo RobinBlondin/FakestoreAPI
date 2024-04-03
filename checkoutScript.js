@@ -1,12 +1,15 @@
 import { fetchProducts } from './utilities/fetchingLogic.js'
 import { createOrderConfirmation } from './utilities/createOrderConf.js'
 import { countTotalPrice } from './utilities/countTotalPrice.js'
+import { setCartCount } from './utilities/cartCounterLogic.js'
 
 const productList = await fetchProducts()
 const shoppingCart = JSON.parse(localStorage.getItem('cart') || '[]')
 const shoppingCartItems = new Map()
 const totalPrice = countTotalPrice(shoppingCart, productList)
 const inputInfo = new Map()
+
+setCartCount(shoppingCart.length)
 
 productList.forEach(key => {
     shoppingCart.forEach(cartId => {
@@ -103,3 +106,7 @@ function writeProducts(className) {
         document.querySelector(className).appendChild(entry)
     })
 }
+
+document.querySelector('.cart-button').addEventListener('click', () => {
+    window.location.href = 'shopping_cart.html';
+})
