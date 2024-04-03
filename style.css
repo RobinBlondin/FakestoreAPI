@@ -2,14 +2,16 @@ body {
     height: 100%;
     width: 100%;
     background-color: #588157;
+    margin: 0;
+    padding: 0;
 }
 
-.row {
+.row, .container-fluid {
     margin-right: 0;
     margin-left: 0;
 }
 
-.col {
+.col, .container-fluid {
     padding: 0;
 }
 
@@ -339,7 +341,6 @@ body {
         height: 37px;
         background: #f2f2f2;
         border-radius: 4px;
-        /* padding: 8px 5px 8px 5px; */
         border: 1px solid #ddd;
         vertical-align: middle;
         text-align: center;
