@@ -20,26 +20,29 @@ document.getElementById('search').addEventListener("search", () => {
 })
 
 document.addEventListener('click', e => {
-    if (e.target && (e.target.matches('button.add-to-cart-button') || e.target.matches('button.mi-addtocart'))) {
-        const productId = e.target.getAttribute('button-id')
-        incrementCartCount()
-        console.log(`id: ${productId}`)
+    const target = e.target.className;
+    const productId = e.target.getAttribute('button-id')
 
-        shoppingCart.push(productId)
-        localStorage.setItem('cart', JSON.stringify(shoppingCart));
-
-    } else if (e.target && e.target.matches('button.more-info-button')) {
-        const productId = e.target.getAttribute('button-id');
-        const product = list.find(product => product.id === parseInt(productId))
-        document.querySelector('.mi-addtocart').setAttribute('button-id', productId)
-
-        document.querySelector('.more-info-image').src = product.image
-        document.querySelector('.more-info-title').textContent = product.title
-        document.querySelector('.more-info-desc').textContent = product.description
-        document.querySelector('.more-info-price').textContent = `$${product.price}`
-        document.querySelector('.more-info-card').style.display = 'block'
-    } else if (e.target && e.target.matches('button.mi-close')) {
-        document.querySelector('.more-info-card').style.display = 'none'
+    switch(target) {
+        case 'add-to-cart-button':
+        case 'mi-addtocart':
+            incrementCartCount()
+            shoppingCart.push(productId)
+            localStorage.setItem('cart', JSON.stringify(shoppingCart));
+            break;
+        case 'more-info-button':
+            const product = list.find(product => product.id === parseInt(productId));
+            
+            document.querySelector('.mi-addtocart').setAttribute('button-id', productId);
+            document.querySelector('.more-info-image').src = product.image;
+            document.querySelector('.more-info-title').textContent = product.title;
+            document.querySelector('.more-info-desc').textContent = product.description;
+            document.querySelector('.more-info-price').textContent = `$${product.price}`;
+            document.querySelector('.more-info-card').style.display = 'block';
+            break;
+        case 'mi-close':
+            document.querySelector('.more-info-card').style.display = 'none';
+            break;
     }
 })
 

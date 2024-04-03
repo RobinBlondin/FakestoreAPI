@@ -3,56 +3,41 @@ import { fetchProducts } from './utilities/fetchingLogic.js'
 import { createCartEntry } from './utilities/createCartEntry.js'
 import { countTotalPrice } from './utilities/countTotalPrice.js'
 
-
 const productList = await fetchProducts()
 const shoppingCart = JSON.parse(localStorage.getItem('cart') || '[]')
 let totalElement = document.querySelector('.cart-total-price')
 
 loadTotalPrice();
-
 setCartCount(shoppingCart.length)
 loadCartEntries()
 
-
-
 document.addEventListener('click', function (e) {
-    if (e.target && e.target.matches('span.minus')) {
-        const id = e.target.getAttribute('minus-id');
-        const cartPanel = document.querySelector('.cart-panel');
+    const target = e.target.className;
+    const id = e.target.getAttribute('clicked-id');
+    const cartPanel = document.querySelector('.cart-panel');
+    cartPanel.innerHTML = '';    
 
-        shoppingCart.splice(shoppingCart.indexOf(id), 1);
-        cartPanel.innerHTML = '';
+    switch (target) {
+        case 'minus':
+            shoppingCart.splice(shoppingCart.indexOf(id), 1);
+            break;
+        case 'plus':
+            shoppingCart.push(id);
+            break;
+        case 'trash-icon':
+            localStorage.clear();
+            shoppingCart.splice(0, shoppingCart.length)
+            break;
+        case 'x-icon':
+            const amount = shoppingCart.filter(productId => productId === id).length;
+            shoppingCart.sort().splice(shoppingCart.indexOf(id), amount)
 
-        loadTotalPrice();
+    }    
 
-        loadCartEntries();
-        setCartCount(shoppingCart.length);
-
-        localStorage.setItem('cart', JSON.stringify(shoppingCart));
-       
-    } else if (e.target && e.target.matches('span.plus')) {
-        const id = e.target.getAttribute('plus-id')
-        const cartPanel = document.querySelector('.cart-panel')
-       
-        shoppingCart.push(id)
-        cartPanel.innerHTML = '';
-
-        loadTotalPrice();
-
-        loadCartEntries();
-        setCartCount(shoppingCart.length)
-
-        localStorage.setItem('cart', JSON.stringify(shoppingCart))
-    } else if (e.target && e.target.matches('.trash-icon')) {
-        localStorage.clear();
-        const cartPanel = document.querySelector('.cart-panel');
-        shoppingCart.splice(0, shoppingCart.length)
-        cartPanel.innerHTML = ''
-
-        loadTotalPrice();
-        loadCartEntries()
-        setCartCount(shoppingCart.length)
-    }
+    loadTotalPrice();
+    loadCartEntries()
+    setCartCount(shoppingCart.length)
+    localStorage.setItem('cart', JSON.stringify(shoppingCart));
 })
 
 function loadCartEntries() {
