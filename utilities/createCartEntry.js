@@ -11,9 +11,10 @@ export function createCartEntry(id, imageSrc, title, price, productAmount) {
             cart.querySelector('.cart-title').textContent = title
             cart.querySelector('.cart-price').textContent = `$${price}`
             cart.querySelector('.cart-input').value = productAmount.toString()
-            cart.querySelector('.minus').setAttribute('minus-id', id)
-            cart.querySelector('.plus').setAttribute('plus-id', id);
+            cart.querySelector('.minus').setAttribute('clicked-id', id)
+            cart.querySelector('.plus').setAttribute('clicked-id', id);
             cart.querySelector('.cart-input').setAttribute('input-id', id);
+            cart.querySelector('.x-icon').setAttribute('clicked-id', id);
             cart.style.animationDelay = `${1 * 100}ms`;
             
             
