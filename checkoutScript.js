@@ -89,13 +89,13 @@ function writeProducts(className) {
         entry.innerHTML = `<div class="col-4 checkout-title">
                             ${key.title}
                         </div>
-                        <div class="col-2">
-                            ${value}
+                        <div class="col-2 checkout-amoutn">
+                            ${value}x
                         </div>
-                        <div class="col-3 text-start">
+                        <div class="col-3 text-start checkout-price">
                             $${key.price}
                         </div>
-                        <div class="col-3 text-center text-success">
+                        <div class="col-3 text-center text-success checkout-total">
                             $${key.price * value}
                         </div>`;
 
