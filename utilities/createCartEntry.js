@@ -15,10 +15,8 @@ export function createCartEntry(id, imageSrc, title, price, productAmount) {
             cart.querySelector('.plus').setAttribute('clicked-id', id);
             cart.querySelector('.cart-input').setAttribute('input-id', id);
             cart.querySelector('.x-icon').setAttribute('clicked-id', id);
-            cart.style.animationDelay = `${1 * 100}ms`;
+            /* cart.style.animationDelay = `${1 * 100}ms`; */
             
-            
-
             document.querySelector('.cart-panel').appendChild(cart)
         })
 }

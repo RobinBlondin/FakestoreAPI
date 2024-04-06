@@ -12,7 +12,7 @@ export function createCard(id, imageSrc, title, price) {
             card.querySelector('.product-image').src = imageSrc
             card.querySelector('.product-title').textContent = title
             card.querySelector('.product-price').textContent = `$${price}`
-            card.style.animationDelay = `${1 * 100}ms`;
+            /* card.style.animationDelay = `${1 * 100}ms`; */
             
             
 
